@@ -1,0 +1,1354 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-01-22 06:52:14 PM"/>
+        <attribute name="created" value="QXN1cztMQVBUT1AtRDJRUzNFU1Q7MjAyNC0wMS0wMTsxMjozNzo0MCBQTTsyNzYx"/>
+        <attribute name="edited" value="QXN1cztMQVBUT1AtRDJRUzNFU1Q7MjAyNC0wMS0wNDsxMDowMTo1OCBQTTsyO0FzdXM7TEFQVE9QLUQyUVMzRVNUOzIwMjMtMTItMjI7MTA6NTE6NDQgQU07ZGVsYXkgcGFydCAyLmZwcmc7NzI5NA=="/>
+        <attribute name="edited" value="QXN1cztMQVBUT1AtRDJRUzNFU1Q7MjAyNC0wMS0wNjsxMjoyNzoxNCBQTTsxO0FzdXM7TEFQVE9QLUQyUVMzRVNUOzIwMjMtMTItMjI7MTA6MTQ6NTIgQU07dGVzdCBsb2FkaW5nIGdhbWUuZnByZzs3ODcx"/>
+        <attribute name="edited" value="QXN1cztMQVBUT1AtRDJRUzNFU1Q7MjAyNC0wMS0xMDsxMDowMToxNSBQTTs0O1VNVU07REVTS1RPUC1WNjVQOTQ4OzIwMjMtMTItMjA7MDE6MjY6MjkgUE07dGVzdCByYW5kb20gcGVuanVtbGFoYW4uZnByZzs4NDAz"/>
+        <attribute name="edited" value="QXN1cztMQVBUT1AtRDJRUzNFU1Q7MjAyNC0wMS0yMjswNjo1MjoxNCBQTTs0ODsyOTMy"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <call expression="opening"/>
+            <declare name="nama" type="String" array="True" size="2"/>
+            <output expression="&quot;Silahkan masukkan namamu : &quot;" newline="True"/>
+            <input variable="nama[0]"/>
+            <call expression="loading"/>
+            <output expression="&quot;Beri nama untuk musuh yang paling menyebalkan menurutmu : &quot;" newline="True"/>
+            <input variable="nama[1]"/>
+            <call expression="opening2(nama)"/>
+            <call expression="mainmenu(nama)"/>
+        </body>
+    </function>
+    <function name="closing" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Jangan khawatir, pengalaman matematika menarik ini selalu menunggumu di lain waktu!&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;Jika kamu memutuskan untuk kembali, pintu petualangan selalu terbuka untukmu&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;Sampai jumpa, dan semoga berhasil menghadapi tantangan matematika berikutnya!&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;CREDITS DEVELOPER :&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;MUHAMMAD RAFII FIRDAUS&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;NIM : 3012310024  IF-1B&quot;" newline="True"/>
+        </body>
+    </function>
+    <function name="ending" type="None" variable="">
+        <parameters>
+            <parameter name="nama" type="String" array="True"/>
+        </parameters>
+        <body>
+            <output expression="&quot;Selamat, &quot; &amp; nama[0] &amp; &quot; Kamu telah berhasil menamatkan game ini&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Dengan kecerdasan dan keberanianmu yang luar biasa, kamu berhasil mengalahkan semua monster dan boss yang mengancam keseimbangan dunia matematika ini&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;Seluruh penduduk desa kini dapat hidup dalam kedamaian berkat usahamu yang cemerlang&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Pengorbananmu dalam memecahkan teka-teki matematika di setiap level telah membuktikan bahwa matematika bisa menjadi petualangan yang seru&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;Semoga perjalanan ini meninggalkan kesan mendalam, dan ingatlah selalu bahwa dunia matematika selalu terbuka untuk penjelajahanmu&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Terimakasih telah memainkan game ini  ^_^&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;CREATOR : &quot; &amp; ToChar(13) &amp; &#13;&#10;&quot;MUHAMMAD RAFII FIRDAUS&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;NIM : 3012310024  IF-1B&quot;" newline="True"/>
+        </body>
+    </function>
+    <function name="extraMin" type="None" variable="">
+        <parameters>
+            <parameter name="nama" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="pilihan" type="Integer" array="False" size=""/>
+            <call expression="loading"/>
+            <output expression="&quot;============================================&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;Ingin mencoba jalur lainnya? *ketik 1*&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Ingin mengulang dari level awal? *ketik 2*&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Ingin berhenti bermain?  *ketik angka selain 1 dan 2*&quot;" newline="True"/>
+            <input variable="pilihan"/>
+            <if expression="pilihan == 1">
+                <then>
+                    <call expression="mainmenu(nama)"/>
+                </then>
+                <else>
+                    <if expression="pilihan == 2">
+                        <then>
+                            <call expression="minlvl1(nama)"/>
+                        </then>
+                        <else>
+                            <call expression="closing"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="extraMulti" type="None" variable="">
+        <parameters>
+            <parameter name="nama" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="pilihan" type="Integer" array="False" size=""/>
+            <call expression="loading"/>
+            <output expression="&quot;============================================&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;Ingin mencoba jalur lainnya? *KETIK 1*&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Ingin mengulang dari level awal? *KETIK 2*&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Ingin berhenti bermain?  *KETIK ANGKA SELAIN 1 DAN 2*&quot;" newline="True"/>
+            <input variable="pilihan"/>
+            <if expression="pilihan == 1">
+                <then>
+                    <call expression="mainmenu(nama)"/>
+                </then>
+                <else>
+                    <if expression="pilihan == 2">
+                        <then>
+                            <call expression="multilvl1(nama)"/>
+                        </then>
+                        <else>
+                            <call expression="closing"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="extraPlus" type="None" variable="">
+        <parameters>
+            <parameter name="nama" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="pilihan" type="Integer" array="False" size=""/>
+            <call expression="loading"/>
+            <output expression="&quot;============================================&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;Ingin mencoba jalur lainnya? *ketik 1*&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Ingin mengulang dari level awal? *ketik 2*&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Ingin berhenti bermain?  *ketik angka selain 1 dan 2*&quot;" newline="True"/>
+            <input variable="pilihan"/>
+            <if expression="pilihan == 1">
+                <then>
+                    <call expression="mainmenu(nama)"/>
+                </then>
+                <else>
+                    <if expression="pilihan == 2">
+                        <then>
+                            <call expression="pluslvl1(nama)"/>
+                        </then>
+                        <else>
+                            <call expression="closing"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="loading" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="nilai" type="Integer" array="False" size=""/>
+            <declare name="delay" type="Integer" array="False" size=""/>
+            <assign variable="nilai" expression="0"/>
+            <while expression="nilai = 0">
+                <output expression="&quot; &quot;" newline="False"/>
+                <for variable="delay" start="0" end="40000" direction="inc" step="1"/>
+                <assign variable="nilai" expression="1"/>
+            </while>
+        </body>
+    </function>
+    <function name="mainmenu" type="None" variable="">
+        <parameters>
+            <parameter name="nama" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="jalur" type="Integer" array="False" size=""/>
+            <output expression="&quot;Di depanmu terdapat tiga jalur yang membentang, setiap jalur memiliki rintangan matematika yang berbeda&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Pilihlah dengan bijak untuk melanjutkan perjalananmu dan menyelamatkan warga!&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;Pilih jalur yang ingin kau tempuh!&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;1. Bukit (Penjumlahan)&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;2. Sungai kecil (Pengurangan)&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;3. Sawah (Perkalian)&quot;" newline="True"/>
+            <output expression="&quot;Pilihlah dari angka 1 sampai 3&quot;" newline="True"/>
+            <input variable="jalur"/>
+            <while expression="jalur != 1 &amp;&amp; jalur != 2 &amp;&amp; jalur != 3">
+                <output expression="&quot;Pilih jalur yang ingin kau tempuh!&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;1. Bukit (Penjumlahan)&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;2. Sungai kecil (Pengurangan)&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;3. Sawah (Perkalian)&quot;" newline="True"/>
+                <output expression="&quot;Pilihlah dari angka 1 sampai 3&quot;" newline="True"/>
+                <input variable="jalur"/>
+            </while>
+            <if expression="jalur = 1">
+                <then>
+                    <call expression="plusmain(nama)"/>
+                </then>
+                <else>
+                    <if expression="jalur = 2">
+                        <then>
+                            <call expression="minusmain(nama)"/>
+                        </then>
+                        <else>
+                            <if expression="jalur = 3">
+                                <then>
+                                    <call expression="multimain(nama)"/>
+                                </then>
+                                <else/>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="menuNyawaHabis" type="None" variable="">
+        <parameters>
+            <parameter name="skor" type="Integer" array="False"/>
+            <parameter name="nama" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="pilihan" type="Integer" array="False" size=""/>
+            <output expression="&quot;GAME OVER&quot; &amp; ToChar(13) &amp; &#13;&#10;&quot;Kamu telah dikalahkan oleh para monster&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;Total skor yang telah kamu dapatkan = &quot; &amp; skor" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;Ingin kembali ke menu utama? *ketik 1*&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Ingin mengulang dari level awal? *ketik 2*&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Ingin berhenti bermain?  *ketik angka selain 1 dan 2*&quot;" newline="True"/>
+            <input variable="pilihan"/>
+            <if expression="pilihan == 1">
+                <then>
+                    <call expression="mainmenu(nama)"/>
+                </then>
+                <else>
+                    <if expression="pilihan == 2">
+                        <then>
+                            <call expression="pluslvl1(nama)"/>
+                        </then>
+                        <else>
+                            <call expression="closing"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="menuNyawaHabis2" type="None" variable="">
+        <parameters>
+            <parameter name="skor" type="Integer" array="False"/>
+            <parameter name="nama" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="pilihan" type="Integer" array="False" size=""/>
+            <output expression="&quot;GAME OVER&quot; &amp; ToChar(13) &amp; &#13;&#10;&quot;Kamu telah dikalahkan oleh para monster&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;Total skor yang telah kamu dapatkan = &quot; &amp; skor" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;Ingin kembali ke menu utama? *ketik 1*&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Ingin mengulang dari level awal? *ketik 2*&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Ingin berhenti bermain?  *ketik angka selain 1 dan 2*&quot;" newline="True"/>
+            <input variable="pilihan"/>
+            <if expression="pilihan == 1">
+                <then>
+                    <call expression="mainmenu(nama)"/>
+                </then>
+                <else>
+                    <if expression="pilihan == 2">
+                        <then>
+                            <call expression="minlvl1(nama)"/>
+                        </then>
+                        <else>
+                            <call expression="closing"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="menuNyawaHabis3" type="None" variable="">
+        <parameters>
+            <parameter name="skor" type="Integer" array="False"/>
+            <parameter name="nama" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="pilihan" type="Integer" array="False" size=""/>
+            <output expression="&quot;GAME OVER&quot; &amp; ToChar(13) &amp; &#13;&#10;&quot;Kamu telah dikalahkan oleh para monster&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;Total skor yang telah kamu dapatkan = &quot; &amp; skor" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;Ingin kembali ke menu utama? *KETIK 1*&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Ingin mengulang dari level awal? *KETIK 2*&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Ingin berhenti bermain?  *KETIK ANGKA SELAIN 1 DAN 2*&quot;" newline="True"/>
+            <input variable="pilihan"/>
+            <if expression="pilihan == 1">
+                <then>
+                    <call expression="mainmenu(nama)"/>
+                </then>
+                <else>
+                    <if expression="pilihan == 2">
+                        <then>
+                            <call expression="multilvl1(nama)"/>
+                        </then>
+                        <else>
+                            <call expression="closing"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="minlvl1" type="None" variable="">
+        <parameters>
+            <parameter name="nama" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="nyawa" type="Integer" array="False" size=""/>
+            <declare name="tebakan" type="Integer" array="False" size=""/>
+            <declare name="random1, random2" type="Integer" array="False" size=""/>
+            <declare name="jawaban" type="Integer" array="False" size=""/>
+            <assign variable="random1" expression="random(11)"/>
+            <assign variable="random2" expression="random(10)"/>
+            <assign variable="nyawa" expression="4"/>
+            <while expression="random1 &lt; random2">
+                <assign variable="random1" expression="random(11)"/>
+                <if expression="random1 &gt; random2">
+                    <then/>
+                    <else>
+                        <assign variable="random2" expression="9"/>
+                    </else>
+                </if>
+            </while>
+            <assign variable="jawaban" expression="random1 - random2"/>
+            <declare name="skor" type="Integer" array="False" size=""/>
+            <assign variable="skor" expression="0"/>
+            <output expression="&quot;AREA SUNGAI PENGURANGAN&quot; &amp; ToChar(13) &amp; &#13;&#10;&quot;========================&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;LEVEL 1  *MONSTER KATAK*&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;No.1)  &quot; &amp; random1 &amp; &quot; - &quot; &amp; random2 &amp; &quot; = ?&quot;" newline="True"/>
+            <input variable="tebakan"/>
+            <while expression="tebakan != jawaban &amp;&amp; nyawa &gt; 0">
+                <if expression="tebakan != jawaban">
+                    <then>
+                        <output expression="&quot;Jawabanmu salah&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Kamu masih punya &quot; &amp; nyawa &amp; &quot; kesempatan lagi&quot;" newline="True"/>
+                        <call expression="loading"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="tebakan = jawaban">
+                    <then>
+                        <output expression="&quot;Jawaban mu BENAR&quot;" newline="True"/>
+                        <call expression="loading&#13;&#10;"/>
+                    </then>
+                    <else>
+                        <output expression="&quot;Ayo hitung lagi dengan tepat&quot;" newline="True"/>
+                        <output expression="&quot;No.1)  &quot; &amp; random1 &amp; &quot; - &quot; &amp; random2 &amp; &quot; = ?&quot;" newline="True"/>
+                        <input variable="tebakan"/>
+                        <assign variable="nyawa" expression="nyawaMin(nyawa)"/>
+                    </else>
+                </if>
+            </while>
+            <if expression="tebakan = jawaban || nyawa &gt; 0">
+                <then>
+                    <assign variable="skor" expression="skorplus(skor)"/>
+                    <output expression="&quot;Kamu mendapatkan skor 100 karena menjawab dengan benar&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Total skormu sekarang = &quot; &amp; skor" newline="True"/>
+                    <call expression="loading"/>
+                    <output expression="&quot;====================================================&quot;" newline="True"/>
+                    <call expression="loading"/>
+                    <call expression="minlvl2(skor, jawaban, nyawa, tebakan, nama)"/>
+                </then>
+                <else>
+                    <call expression="menuNyawaHabis2(skor, nama)"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="minlvl2" type="None" variable="">
+        <parameters>
+            <parameter name="skor" type="Integer" array="False"/>
+            <parameter name="jawaban" type="Integer" array="False"/>
+            <parameter name="nyawa" type="Integer" array="False"/>
+            <parameter name="tebakan" type="Integer" array="False"/>
+            <parameter name="nama" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="random3, random4" type="Integer" array="False" size=""/>
+            <assign variable="random3" expression="random(41) + 10"/>
+            <assign variable="random4" expression="random(40) + 10"/>
+            <while expression="random3 &lt; random4">
+                <assign variable="random3" expression="random(41) + 10"/>
+                <if expression="random3 &gt; random4">
+                    <then/>
+                    <else>
+                        <assign variable="random4" expression="49"/>
+                    </else>
+                </if>
+            </while>
+            <assign variable="jawaban" expression="random3 - random4"/>
+            <output expression="&quot;AREA SUNGAI PENGURANGAN&quot; &amp; ToChar(13) &amp; &#13;&#10;&quot;========================&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;LEVEL 2  *MONSTER IKAN*&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;No.2)  &quot; &amp; random3 &amp; &quot; - &quot; &amp; random4 &amp; &quot; = ?&quot;" newline="True"/>
+            <input variable="tebakan"/>
+            <while expression="tebakan != jawaban &amp;&amp; nyawa &gt; 0">
+                <if expression="tebakan != jawaban">
+                    <then>
+                        <output expression="&quot;Jawabanmu salah&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Kamu masih punya &quot; &amp; nyawa &amp; &quot; kesempatan lagi&quot;" newline="True"/>
+                        <call expression="loading"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="tebakan = jawaban">
+                    <then>
+                        <output expression="&quot;Jawaban mu BENAR&quot;" newline="True"/>
+                        <call expression="loading&#13;&#10;"/>
+                    </then>
+                    <else>
+                        <output expression="&quot;Ayo hitung lagi dengan tepat&quot;" newline="True"/>
+                        <output expression="&quot;No.2)  &quot; &amp; random3 &amp; &quot; - &quot; &amp; random4 &amp; &quot; = ?&quot;" newline="True"/>
+                        <input variable="tebakan"/>
+                        <assign variable="nyawa" expression="nyawaMin(nyawa)"/>
+                    </else>
+                </if>
+            </while>
+            <if expression="tebakan = jawaban || nyawa &gt; 0">
+                <then>
+                    <assign variable="skor" expression="skorplus(skor)"/>
+                    <output expression="&quot;Kamu mendapatkan skor 100 karena menjawab dengan benar&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Total skormu sekarang = &quot; &amp; skor" newline="True"/>
+                    <call expression="loading"/>
+                    <output expression="&quot;====================================================&quot;" newline="True"/>
+                    <call expression="loading"/>
+                    <call expression="minlvl3(skor, jawaban, nyawa, tebakan, nama)"/>
+                </then>
+                <else>
+                    <call expression="menuNyawaHabis2(skor, nama)"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="minlvl3" type="None" variable="">
+        <parameters>
+            <parameter name="skor" type="Integer" array="False"/>
+            <parameter name="jawaban" type="Integer" array="False"/>
+            <parameter name="nyawa" type="Integer" array="False"/>
+            <parameter name="tebakan" type="Integer" array="False"/>
+            <parameter name="nama" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="random5, random6" type="Integer" array="False" size=""/>
+            <assign variable="random5" expression="random(51) + 50"/>
+            <assign variable="random6" expression="random(50) + 50"/>
+            <while expression="random5 &lt; random6">
+                <assign variable="random5" expression="random(51) + 50"/>
+                <if expression="random5 &gt; random6">
+                    <then/>
+                    <else>
+                        <assign variable="random6" expression="99"/>
+                    </else>
+                </if>
+            </while>
+            <assign variable="jawaban" expression="random5 - random6"/>
+            <output expression="&quot;AREA SUNGAI PENGURANGAN&quot; &amp; ToChar(13) &amp; &#13;&#10;&quot;========================&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;LEVEL 3  *MONSTER BELUT*&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;No.3)  &quot; &amp; random5 &amp; &quot; - &quot; &amp; random6 &amp; &quot; = ?&quot;" newline="True"/>
+            <input variable="tebakan"/>
+            <while expression="tebakan != jawaban &amp;&amp; nyawa &gt; 0">
+                <if expression="tebakan != jawaban">
+                    <then>
+                        <output expression="&quot;Jawabanmu salah&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Kamu masih punya &quot; &amp; nyawa &amp; &quot; kesempatan lagi&quot;" newline="True"/>
+                        <call expression="loading"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="tebakan = jawaban">
+                    <then>
+                        <output expression="&quot;Jawaban mu BENAR&quot;" newline="True"/>
+                        <call expression="loading&#13;&#10;"/>
+                    </then>
+                    <else>
+                        <output expression="&quot;Ayo hitung lagi dengan tepat&quot;" newline="True"/>
+                        <output expression="&quot;No.3)  &quot; &amp; random5 &amp; &quot; - &quot; &amp; random6 &amp; &quot; = ?&quot;" newline="True"/>
+                        <input variable="tebakan"/>
+                        <assign variable="nyawa" expression="nyawaMin(nyawa)"/>
+                    </else>
+                </if>
+            </while>
+            <if expression="tebakan = jawaban || nyawa &gt; 0">
+                <then>
+                    <assign variable="skor" expression="skorplus(skor)"/>
+                    <output expression="&quot;Kamu mendapatkan skor 100 karena menjawab dengan benar&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Total skormu sekarang = &quot; &amp; skor" newline="True"/>
+                    <call expression="loading"/>
+                    <output expression="&quot;====================================================&quot;" newline="True"/>
+                    <call expression="loading"/>
+                    <call expression="minlvl4(skor, jawaban, nyawa, tebakan, nama)"/>
+                </then>
+                <else>
+                    <call expression="menuNyawaHabis2(skor, nama)"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="minlvl4" type="None" variable="">
+        <parameters>
+            <parameter name="skor" type="Integer" array="False"/>
+            <parameter name="jawaban" type="Integer" array="False"/>
+            <parameter name="nyawa" type="Integer" array="False"/>
+            <parameter name="tebakan" type="Integer" array="False"/>
+            <parameter name="nama" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="random7, random8" type="Integer" array="False" size=""/>
+            <assign variable="random7" expression="random(401) + 100"/>
+            <assign variable="random8" expression="random(400) + 100"/>
+            <while expression="random7 &lt; random8">
+                <assign variable="random7" expression="random(401) + 100"/>
+                <if expression="random7 &gt; random8">
+                    <then/>
+                    <else>
+                        <assign variable="random8" expression="499"/>
+                    </else>
+                </if>
+            </while>
+            <assign variable="jawaban" expression="random7 - random8"/>
+            <output expression="&quot;AREA SUNGAI PENGURANGAN&quot; &amp; ToChar(13) &amp; &#13;&#10;&quot;========================&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;LEVEL 4  *MONSTER KURA-KURA*&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;No.4)  &quot; &amp; random7 &amp; &quot; - &quot; &amp; random8 &amp; &quot; = ?&quot;" newline="True"/>
+            <input variable="tebakan"/>
+            <while expression="tebakan != jawaban &amp;&amp; nyawa &gt; 0">
+                <if expression="tebakan != jawaban">
+                    <then>
+                        <output expression="&quot;Jawabanmu salah&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Kamu masih punya &quot; &amp; nyawa &amp; &quot; kesempatan lagi&quot;" newline="True"/>
+                        <call expression="loading"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="tebakan = jawaban">
+                    <then>
+                        <output expression="&quot;Jawaban mu BENAR&quot;" newline="True"/>
+                        <call expression="loading&#13;&#10;"/>
+                    </then>
+                    <else>
+                        <output expression="&quot;Ayo hitung lagi dengan tepat&quot;" newline="True"/>
+                        <output expression="&quot;No.4)  &quot; &amp; random7 &amp; &quot; - &quot; &amp; random8 &amp; &quot; = ?&quot;" newline="True"/>
+                        <input variable="tebakan"/>
+                        <assign variable="nyawa" expression="nyawaMin(nyawa)"/>
+                    </else>
+                </if>
+            </while>
+            <if expression="tebakan = jawaban || nyawa &gt; 0">
+                <then>
+                    <assign variable="skor" expression="skorplus(skor)"/>
+                    <output expression="&quot;Kamu mendapatkan skor 100 karena menjawab dengan benar&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Total skormu sekarang = &quot; &amp; skor" newline="True"/>
+                    <call expression="loading"/>
+                    <output expression="&quot;====================================================&quot;" newline="True"/>
+                    <call expression="loading"/>
+                    <call expression="minlvl5(skor, jawaban, nyawa, tebakan, nama)"/>
+                </then>
+                <else>
+                    <call expression="menuNyawaHabis2(skor, nama)"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="minlvl5" type="None" variable="">
+        <parameters>
+            <parameter name="skor" type="Integer" array="False"/>
+            <parameter name="jawaban" type="Integer" array="False"/>
+            <parameter name="nyawa" type="Integer" array="False"/>
+            <parameter name="tebakan" type="Integer" array="False"/>
+            <parameter name="nama" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="random9, random10" type="Integer" array="False" size=""/>
+            <assign variable="random9" expression="random(501) + 500"/>
+            <assign variable="random10" expression="random(500) + 500"/>
+            <while expression="random9 &lt; random10">
+                <assign variable="random9" expression="random(501) + 500"/>
+                <if expression="random9 &gt; random10">
+                    <then/>
+                    <else>
+                        <assign variable="random10" expression="999"/>
+                    </else>
+                </if>
+            </while>
+            <assign variable="jawaban" expression="random9 - random10"/>
+            <output expression="&quot;AREA SUNGAI PENGURANGAN&quot; &amp; ToChar(13) &amp; &#13;&#10;&quot;========================&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;LEVEL 5  *MONSTER BUAYA*&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;No.5)  &quot; &amp; random9 &amp; &quot; - &quot; &amp; random10 &amp; &quot; = ?&quot;" newline="True"/>
+            <input variable="tebakan"/>
+            <while expression="tebakan != jawaban &amp;&amp; nyawa &gt; 0">
+                <if expression="tebakan != jawaban">
+                    <then>
+                        <output expression="&quot;Jawabanmu salah&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Kamu masih punya &quot; &amp; nyawa &amp; &quot; kesempatan lagi&quot;" newline="True"/>
+                        <call expression="loading"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="tebakan = jawaban">
+                    <then>
+                        <output expression="&quot;Jawaban mu BENAR&quot;" newline="True"/>
+                        <call expression="loading&#13;&#10;"/>
+                    </then>
+                    <else>
+                        <output expression="&quot;Ayo hitung lagi dengan tepat&quot;" newline="True"/>
+                        <output expression="&quot;No.5)  &quot; &amp; random9 &amp; &quot; - &quot; &amp; random10 &amp; &quot; = ?&quot;" newline="True"/>
+                        <input variable="tebakan"/>
+                        <assign variable="nyawa" expression="nyawaMin(nyawa)"/>
+                    </else>
+                </if>
+            </while>
+            <if expression="tebakan = jawaban || nyawa &gt; 0">
+                <then>
+                    <assign variable="skor" expression="skorplus(skor)"/>
+                    <output expression="&quot;Kamu mendapatkan skor 100 karena menjawab dengan benar&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Total skormu sekarang = &quot; &amp; skor" newline="True"/>
+                    <call expression="loading"/>
+                    <output expression="&quot;====================================================&quot;" newline="True"/>
+                    <call expression="loading"/>
+                    <call expression="minlvl6(skor, jawaban, nyawa, tebakan, nama)"/>
+                </then>
+                <else>
+                    <call expression="menuNyawaHabis2(skor, nama)"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="minlvl6" type="None" variable="">
+        <parameters>
+            <parameter name="skor" type="Integer" array="False"/>
+            <parameter name="jawaban" type="Integer" array="False"/>
+            <parameter name="nyawa" type="Integer" array="False"/>
+            <parameter name="tebakan" type="Integer" array="False"/>
+            <parameter name="nama" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="random11, random12" type="Integer" array="False" size=""/>
+            <assign variable="random11" expression="random(4001) + 1000"/>
+            <assign variable="random12" expression="random(4000) + 1000"/>
+            <while expression="random11 &lt; random12">
+                <assign variable="random11" expression="random(4001) + 1000"/>
+                <if expression="random11 &gt; random12">
+                    <then/>
+                    <else>
+                        <assign variable="random11" expression="4999"/>
+                    </else>
+                </if>
+            </while>
+            <assign variable="jawaban" expression="random11 - random12"/>
+            <output expression="&quot;AREA SUNGAI PENGURANGAN&quot; &amp; ToChar(13) &amp; &#13;&#10;&quot;==========================================&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;LEVEL AKHIR &quot; &amp; &quot; *&quot; &amp; nama[1] &amp; &quot; MASTER OF SUBTRACTION*&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;No.6)  &quot; &amp; random11 &amp; &quot; - &quot; &amp; random12 &amp; &quot; = ?&quot;" newline="True"/>
+            <input variable="tebakan"/>
+            <while expression="tebakan != jawaban &amp;&amp; nyawa &gt; 0">
+                <if expression="tebakan != jawaban">
+                    <then>
+                        <output expression="&quot;Jawabanmu salah&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Kamu masih punya &quot; &amp; nyawa &amp; &quot; kesempatan lagi&quot;" newline="True"/>
+                        <call expression="loading"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="tebakan = jawaban">
+                    <then>
+                        <output expression="&quot;Jawaban mu BENAR&quot;" newline="True"/>
+                        <call expression="loading&#13;&#10;"/>
+                    </then>
+                    <else>
+                        <output expression="&quot;Ayo hitung lagi dengan tepat&quot;" newline="True"/>
+                        <output expression="&quot;No.6)  &quot; &amp; random11 &amp; &quot; - &quot; &amp; random12 &amp; &quot; = ?&quot;" newline="True"/>
+                        <input variable="tebakan"/>
+                        <assign variable="nyawa" expression="nyawaMin(nyawa)"/>
+                    </else>
+                </if>
+            </while>
+            <if expression="tebakan = jawaban || nyawa &gt; 0">
+                <then>
+                    <assign variable="skor" expression="skorplus(skor)"/>
+                    <output expression="&quot;Kamu mendapatkan skor 100 karena menjawab dengan benar&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Total skormu sekarang = &quot; &amp; skor" newline="True"/>
+                    <call expression="loading"/>
+                    <output expression="&quot;====================================================&quot;" newline="True"/>
+                    <call expression="ending(nama)"/>
+                    <call expression="extraMin(nama)"/>
+                </then>
+                <else>
+                    <call expression="menuNyawaHabis2(skor, nama)"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="minusmain" type="None" variable="">
+        <parameters>
+            <parameter name="nama" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="pilihan" type="Integer" array="False" size=""/>
+            <output expression="&quot;Selamat datang di Area Sungai (Pengurangan)&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Tantangan pengurangan menantimu&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;Teliti dan gunakan kecerdikanmu dalam pengurangan untuk menyeberangi sungai kecil yang berbelok-belok&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Setiap langkahmu harus tepat agar tidak terjerembab ke dalam sungai&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;Persiapkan dirimu untuk melewati tujuh level yang semakin sulit&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Setiap level di area sungai ini memiliki monster dengan tantangan pengurangan yang harus kamu atasi&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;Siap untuk memasuki area sungai?&quot;" newline="True"/>
+            <output expression="&quot;Ketik 1 untuk lanjut&quot;" newline="True"/>
+            <input variable="pilihan"/>
+            <while expression="pilihan != 1">
+                <output expression="&quot;Ketik 1 untuk melanjutkan&quot;" newline="True"/>
+                <input variable="pilihan"/>
+            </while>
+            <call expression="minlvl1(nama)"/>
+        </body>
+    </function>
+    <function name="multilvl1" type="None" variable="">
+        <parameters>
+            <parameter name="nama" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="nyawa" type="Integer" array="False" size=""/>
+            <declare name="tebakan" type="Integer" array="False" size=""/>
+            <declare name="random1, random2" type="Integer" array="False" size=""/>
+            <declare name="jawaban" type="Integer" array="False" size=""/>
+            <assign variable="random1" expression="random(11)"/>
+            <assign variable="random2" expression="random(10)"/>
+            <assign variable="nyawa" expression="4"/>
+            <assign variable="jawaban" expression="random1 * random2"/>
+            <declare name="skor" type="Integer" array="False" size=""/>
+            <assign variable="skor" expression="0"/>
+            <output expression="&quot;AREA SAWAH PERKALIAN&quot; &amp; ToChar(13) &amp; &#13;&#10;&quot;========================&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;LEVEL 1  *MONSTER KUMBANG*&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;No.1)  &quot; &amp; random1 &amp; &quot; x &quot; &amp; random2 &amp; &quot; = ?&quot;" newline="True"/>
+            <input variable="tebakan"/>
+            <while expression="tebakan != jawaban &amp;&amp; nyawa &gt; 0">
+                <if expression="tebakan != jawaban">
+                    <then>
+                        <output expression="&quot;Jawabanmu salah&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Kamu masih punya &quot; &amp; nyawa &amp; &quot; kesempatan lagi&quot;" newline="True"/>
+                        <call expression="loading"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="tebakan = jawaban">
+                    <then>
+                        <output expression="&quot;Jawaban mu BENAR&quot;" newline="True"/>
+                        <call expression="loading&#13;&#10;"/>
+                    </then>
+                    <else>
+                        <output expression="&quot;Ayo hitung lagi dengan tepat&quot;" newline="True"/>
+                        <output expression="&quot;No.1)  &quot; &amp; random1 &amp; &quot; x &quot; &amp; random2 &amp; &quot; = ?&quot;" newline="True"/>
+                        <input variable="tebakan"/>
+                        <assign variable="nyawa" expression="nyawaMin(nyawa)"/>
+                    </else>
+                </if>
+            </while>
+            <if expression="tebakan = jawaban || nyawa &gt; 0">
+                <then>
+                    <assign variable="skor" expression="skorplus(skor)"/>
+                    <output expression="&quot;Kamu mendapatkan skor 100 karena menjawab dengan benar&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Total skormu sekarang = &quot; &amp; skor" newline="True"/>
+                    <call expression="loading"/>
+                    <output expression="&quot;====================================================&quot;" newline="True"/>
+                    <call expression="loading"/>
+                    <call expression="multilvl2(skor, jawaban, nyawa, tebakan, nama)"/>
+                </then>
+                <else>
+                    <call expression="menuNyawaHabis3(skor, nama)"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="multilvl2" type="None" variable="">
+        <parameters>
+            <parameter name="skor" type="Integer" array="False"/>
+            <parameter name="jawaban" type="Integer" array="False"/>
+            <parameter name="nyawa" type="Integer" array="False"/>
+            <parameter name="tebakan" type="Integer" array="False"/>
+            <parameter name="nama" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="random3, random4" type="Integer" array="False" size=""/>
+            <assign variable="random3" expression="random(41) + 10"/>
+            <assign variable="random4" expression="random(9) + 2"/>
+            <assign variable="jawaban" expression="random3 * random4"/>
+            <output expression="&quot;AREA SAWAH PERKALIAN&quot; &amp; ToChar(13) &amp; &#13;&#10;&quot;========================&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;LEVEL 2  *MONSTER BELALANG*&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;No.2)  &quot; &amp; random3 &amp; &quot; x &quot; &amp; random4 &amp; &quot; = ?&quot;" newline="True"/>
+            <input variable="tebakan"/>
+            <while expression="tebakan != jawaban &amp;&amp; nyawa &gt; 0">
+                <if expression="tebakan != jawaban">
+                    <then>
+                        <output expression="&quot;Jawabanmu salah&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Kamu masih punya &quot; &amp; nyawa &amp; &quot; kesempatan lagi&quot;" newline="True"/>
+                        <call expression="loading"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="tebakan = jawaban">
+                    <then>
+                        <output expression="&quot;Jawaban mu BENAR&quot;" newline="True"/>
+                        <call expression="loading&#13;&#10;"/>
+                    </then>
+                    <else>
+                        <output expression="&quot;Ayo hitung lagi dengan tepat&quot;" newline="True"/>
+                        <output expression="&quot;No.2)  &quot; &amp; random3 &amp; &quot; x &quot; &amp; random4 &amp; &quot; = ?&quot;" newline="True"/>
+                        <input variable="tebakan"/>
+                        <assign variable="nyawa" expression="nyawaMin(nyawa)"/>
+                    </else>
+                </if>
+            </while>
+            <if expression="tebakan = jawaban || nyawa &gt; 0">
+                <then>
+                    <assign variable="skor" expression="skorplus(skor)"/>
+                    <output expression="&quot;Kamu mendapatkan tambahan skor 100 karena menjawab dengan benar&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Total skormu sekarang = &quot; &amp; skor" newline="True"/>
+                    <call expression="loading"/>
+                    <output expression="&quot;====================================================&quot;" newline="True"/>
+                    <call expression="loading"/>
+                    <call expression="multilvl3(skor, jawaban, nyawa, tebakan, nama)"/>
+                </then>
+                <else>
+                    <call expression="menuNyawaHabis3(skor, nama)"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="multilvl3" type="None" variable="">
+        <parameters>
+            <parameter name="skor" type="Integer" array="False"/>
+            <parameter name="jawaban" type="Integer" array="False"/>
+            <parameter name="nyawa" type="Integer" array="False"/>
+            <parameter name="tebakan" type="Integer" array="False"/>
+            <parameter name="nama" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="random5, random6" type="Integer" array="False" size=""/>
+            <assign variable="random5" expression="random(51) + 50"/>
+            <assign variable="random6" expression="random(41) + 10"/>
+            <assign variable="jawaban" expression="random5 * random6"/>
+            <output expression="&quot;AREA SAWAH PERKALIAN&quot; &amp; ToChar(13) &amp; &#13;&#10;&quot;========================&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;LEVEL 3  *MONSTER ULAT*&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;No.3)  &quot; &amp; random5 &amp; &quot; x &quot; &amp; random6 &amp; &quot; = ?&quot;" newline="True"/>
+            <input variable="tebakan"/>
+            <while expression="tebakan != jawaban &amp;&amp; nyawa &gt; 0">
+                <if expression="tebakan != jawaban">
+                    <then>
+                        <output expression="&quot;Jawabanmu salah&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Kamu masih punya &quot; &amp; nyawa &amp; &quot; kesempatan lagi&quot;" newline="True"/>
+                        <call expression="loading"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="tebakan = jawaban">
+                    <then>
+                        <output expression="&quot;Jawaban mu BENAR&quot;" newline="True"/>
+                        <call expression="loading&#13;&#10;"/>
+                    </then>
+                    <else>
+                        <output expression="&quot;Ayo hitung lagi dengan tepat&quot;" newline="True"/>
+                        <output expression="&quot;No.3)  &quot; &amp; random5 &amp; &quot; x &quot; &amp; random6 &amp; &quot; = ?&quot;" newline="True"/>
+                        <input variable="tebakan"/>
+                        <assign variable="nyawa" expression="nyawaMin(nyawa)"/>
+                    </else>
+                </if>
+            </while>
+            <if expression="tebakan = jawaban || nyawa &gt; 0">
+                <then>
+                    <assign variable="skor" expression="skorplus(skor)"/>
+                    <output expression="&quot;Kamu mendapatkan tambahan skor 100 karena menjawab dengan benar&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Total skormu sekarang = &quot; &amp; skor" newline="True"/>
+                    <call expression="loading"/>
+                    <output expression="&quot;====================================================&quot;" newline="True"/>
+                    <call expression="loading"/>
+                    <call expression="multilvl4(skor, jawaban, nyawa, tebakan, nama)"/>
+                </then>
+                <else>
+                    <call expression="menuNyawaHabis3(skor, nama)"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="multilvl4" type="None" variable="">
+        <parameters>
+            <parameter name="skor" type="Integer" array="False"/>
+            <parameter name="jawaban" type="Integer" array="False"/>
+            <parameter name="nyawa" type="Integer" array="False"/>
+            <parameter name="tebakan" type="Integer" array="False"/>
+            <parameter name="nama" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="random7, random8" type="Integer" array="False" size=""/>
+            <assign variable="random7" expression="random(100) + 100"/>
+            <assign variable="random8" expression="random(31) + 40"/>
+            <assign variable="jawaban" expression="random7 * random8"/>
+            <output expression="&quot;AREA SAWAH PERKALIAN&quot; &amp; ToChar(13) &amp; &#13;&#10;&quot;===========================================&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;LEVEL AKHIR  &quot; &amp; &quot;*&quot; &amp; nama[1] &amp; &quot; MASTER OF MULTIPILCATION*&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;No.4)  &quot; &amp; random7 &amp; &quot; x &quot; &amp; random8 &amp; &quot; = ?&quot;" newline="True"/>
+            <input variable="tebakan"/>
+            <while expression="tebakan != jawaban &amp;&amp; nyawa &gt; 0">
+                <if expression="tebakan != jawaban">
+                    <then>
+                        <output expression="&quot;Jawabanmu salah&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Kamu masih punya &quot; &amp; nyawa &amp; &quot; kesempatan lagi&quot;" newline="True"/>
+                        <call expression="loading"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="tebakan = jawaban">
+                    <then>
+                        <output expression="&quot;Jawaban mu BENAR&quot;" newline="True"/>
+                        <call expression="loading&#13;&#10;"/>
+                    </then>
+                    <else>
+                        <output expression="&quot;Ayo hitung lagi dengan tepat&quot;" newline="True"/>
+                        <output expression="&quot;No.4)  &quot; &amp; random7 &amp; &quot; x &quot; &amp; random8 &amp; &quot; = ?&quot;" newline="True"/>
+                        <input variable="tebakan"/>
+                        <assign variable="nyawa" expression="nyawaMin(nyawa)"/>
+                    </else>
+                </if>
+            </while>
+            <if expression="tebakan = jawaban || nyawa &gt; 0">
+                <then>
+                    <assign variable="skor" expression="skorplus(skor)"/>
+                    <output expression="&quot;Kamu mendapatkan tambahan skor 100 karena menjawab dengan benar&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Total skormu sekarang = &quot; &amp; skor" newline="True"/>
+                    <call expression="loading"/>
+                    <output expression="&quot;====================================================&quot;" newline="True"/>
+                    <call expression="ending(nama)"/>
+                    <call expression="extraMulti(nama)"/>
+                </then>
+                <else>
+                    <call expression="menuNyawaHabis3(skor, nama)"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="multimain" type="None" variable="">
+        <parameters>
+            <parameter name="nama" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="pilihan" type="Integer" array="False" size=""/>
+            <output expression="&quot;Selamat datang di Area Sawah (Perkalian)&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Tantangan perkalian menantimu&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;Area sawah yang dipenuhi dengan teka-teki perkalian&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Bersiaplah untuk memasuki kawasan yang membutuhkan ketelitian perkalian&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;Dimana setiap langkahmu membawa tantangan baru yang semakin meningkat&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Ayo mulai petualanganmu dan kalahkan monster-monster hama dengan keahlian perkalianmu!&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;Siap untuk memasuki area sawah?&quot;" newline="True"/>
+            <output expression="&quot;Ketik 1 untuk lanjut&quot;" newline="True"/>
+            <input variable="pilihan"/>
+            <while expression="pilihan != 1">
+                <output expression="&quot;Ketik 1 untuk melanjutkan&quot;" newline="True"/>
+                <input variable="pilihan"/>
+            </while>
+            <call expression="multilvl1(nama)"/>
+        </body>
+    </function>
+    <function name="nyawaMin" type="Integer" variable="nyawa">
+        <parameters>
+            <parameter name="nyawa" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <assign variable="nyawa" expression="nyawa - 1"/>
+        </body>
+    </function>
+    <function name="opening" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Halo, selamat datang di game MathXercise  ^_^ &quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;MathXercise adalah game matematika yang dirancang khusus untuk anak-anak agar dapat belajar matematika dengan cara yang menyenangkan dan interaktif&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;Game ini menawarkan pengalaman belajar yang menarik sambil mengembangkan keterampilan matematika dasar&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;MathXercise bukan hanya permainan, tetapi juga alat pembelajaran yang efektif untuk membantu anak-anak mengembangkan kecintaan mereka pada matematika sejak dini&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;Dengan pendekatan yang menyenangkan dan interaktif, MathXercise menjadi teman belajar yang ideal bagi anak kecil&quot;" newline="True"/>
+            <call expression="loading"/>
+        </body>
+    </function>
+    <function name="opening2" type="None" variable="">
+        <parameters>
+            <parameter name="nama" type="String" array="True"/>
+        </parameters>
+        <body>
+            <output expression="&quot;Selamat datang &quot; &amp; nama[0]" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;Kamu akan memasuki desa yang terancam oleh monster matematika&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;Bergabunglah sebagai pahlawan matematika kami, siapkan keberanian dan ketangguhanmu, dan gunakan keahlian matematika untuk menyelamatkan warga dari serangan para monster&quot; &amp; &quot; yang licik!&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;Segera hadapi setiap tantangan, jawab dengan benar, dan bantu desa ini kembali kepada kedamaian&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Mari mulai petualangan matematika!&quot;" newline="True"/>
+            <call expression="loading"/>
+        </body>
+    </function>
+    <function name="pluslvl1" type="None" variable="">
+        <parameters>
+            <parameter name="nama" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="nyawa" type="Integer" array="False" size=""/>
+            <declare name="tebakan" type="Integer" array="False" size=""/>
+            <declare name="random1, random2" type="Integer" array="False" size=""/>
+            <declare name="jawaban" type="Integer" array="False" size=""/>
+            <assign variable="random1" expression="random(11)"/>
+            <assign variable="random2" expression="random(10)"/>
+            <assign variable="nyawa" expression="4"/>
+            <assign variable="jawaban" expression="random1 + random2"/>
+            <declare name="skor" type="Integer" array="False" size=""/>
+            <assign variable="skor" expression="0"/>
+            <output expression="&quot;AREA BUKIT PENJUMLAHAN&quot; &amp; ToChar(13) &amp; &#13;&#10;&quot;========================&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;LEVEL 1  *TROLL MINNIONS*&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;No.1)  &quot; &amp; random1 &amp; &quot; + &quot; &amp; random2 &amp; &quot; = ?&quot;" newline="True"/>
+            <input variable="tebakan"/>
+            <while expression="tebakan != jawaban &amp;&amp; nyawa &gt; 0">
+                <if expression="tebakan != jawaban">
+                    <then>
+                        <output expression="&quot;Jawabanmu salah&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Kamu masih punya &quot; &amp; nyawa &amp; &quot; kesempatan lagi&quot;" newline="True"/>
+                        <call expression="loading"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="tebakan = jawaban">
+                    <then>
+                        <output expression="&quot;Jawaban mu BENAR&quot;" newline="True"/>
+                        <call expression="loading&#13;&#10;"/>
+                    </then>
+                    <else>
+                        <output expression="&quot;Ayo hitung lagi dengan tepat&quot;" newline="True"/>
+                        <output expression="&quot;No.1)  &quot; &amp; random1 &amp; &quot; + &quot; &amp; random2 &amp; &quot; = ?&quot;" newline="True"/>
+                        <input variable="tebakan"/>
+                        <assign variable="nyawa" expression="nyawaMin(nyawa)"/>
+                    </else>
+                </if>
+            </while>
+            <if expression="tebakan = jawaban || nyawa &gt; 0">
+                <then>
+                    <assign variable="skor" expression="skorplus(skor)"/>
+                    <output expression="&quot;Kamu mendapatkan skor 100 karena menjawab dengan benar&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Total skormu sekarang = &quot; &amp; skor" newline="True"/>
+                    <call expression="loading"/>
+                    <output expression="&quot;====================================================&quot;" newline="True"/>
+                    <call expression="loading"/>
+                    <call expression="pluslvl2(skor, jawaban, nyawa, tebakan, nama)"/>
+                </then>
+                <else>
+                    <call expression="menuNyawaHabis(skor, nama)"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="pluslvl2" type="None" variable="">
+        <parameters>
+            <parameter name="skor" type="Integer" array="False"/>
+            <parameter name="jawaban" type="Integer" array="False"/>
+            <parameter name="nyawa" type="Integer" array="False"/>
+            <parameter name="tebakan" type="Integer" array="False"/>
+            <parameter name="nama" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="random3, random4" type="Integer" array="False" size=""/>
+            <assign variable="random3" expression="random(41) + 10"/>
+            <assign variable="random4" expression="random(41) + 10"/>
+            <assign variable="jawaban" expression="random3 + random4"/>
+            <output expression="&quot;AREA BUKIT PENJUMLAHAN&quot; &amp; ToChar(13) &amp; &#13;&#10;&quot;========================&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;LEVEL 2  *GARGOYLE*&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;No.2)  &quot; &amp; random3 &amp; &quot; + &quot; &amp; random4 &amp; &quot; = ?&quot;" newline="True"/>
+            <input variable="tebakan"/>
+            <while expression="tebakan != jawaban &amp;&amp; nyawa &gt; 0">
+                <if expression="tebakan != jawaban">
+                    <then>
+                        <output expression="&quot;Jawabanmu salah&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Kamu masih punya &quot; &amp; nyawa &amp; &quot; kesempatan lagi&quot;" newline="True"/>
+                        <call expression="loading"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="tebakan = jawaban">
+                    <then>
+                        <output expression="&quot;Jawaban mu BENAR&quot;" newline="True"/>
+                        <call expression="loading&#13;&#10;"/>
+                    </then>
+                    <else>
+                        <output expression="&quot;Ayo hitung lagi dengan tepat&quot;" newline="True"/>
+                        <output expression="&quot;No.2)  &quot; &amp; random3 &amp; &quot; + &quot; &amp; random4 &amp; &quot; = ?&quot;" newline="True"/>
+                        <input variable="tebakan"/>
+                        <assign variable="nyawa" expression="nyawaMin(nyawa)"/>
+                    </else>
+                </if>
+            </while>
+            <if expression="tebakan = jawaban || nyawa &gt; 0">
+                <then>
+                    <assign variable="skor" expression="skorplus(skor)"/>
+                    <output expression="&quot;Kamu mendapatkan tambahan skor 100 karena menjawab dengan benar&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Total skormu sekarang = &quot; &amp; skor" newline="True"/>
+                    <call expression="loading"/>
+                    <output expression="&quot;====================================================&quot;" newline="True"/>
+                    <call expression="loading"/>
+                    <call expression="pluslvl3(skor, jawaban, nyawa, tebakan, nama)"/>
+                </then>
+                <else>
+                    <call expression="menuNyawaHabis(skor, nama)"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="pluslvl3" type="None" variable="">
+        <parameters>
+            <parameter name="skor" type="Integer" array="False"/>
+            <parameter name="jawaban" type="Integer" array="False"/>
+            <parameter name="nyawa" type="Integer" array="False"/>
+            <parameter name="tebakan" type="Integer" array="False"/>
+            <parameter name="nama" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="random5, random6" type="Integer" array="False" size=""/>
+            <assign variable="random5" expression="random(51) + 50"/>
+            <assign variable="random6" expression="random(51) + 50"/>
+            <assign variable="jawaban" expression="random5 + random6"/>
+            <output expression="&quot;AREA BUKIT PENJUMLAHAN&quot; &amp; ToChar(13) &amp; &#13;&#10;&quot;========================&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;LEVEL 3  *HARPY*&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;No.3)  &quot; &amp; random5 &amp; &quot; + &quot; &amp; random6 &amp; &quot; = ?&quot;" newline="True"/>
+            <input variable="tebakan"/>
+            <while expression="tebakan != jawaban &amp;&amp; nyawa &gt; 0">
+                <if expression="tebakan != jawaban">
+                    <then>
+                        <output expression="&quot;Jawabanmu salah&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Kamu masih punya &quot; &amp; nyawa &amp; &quot; kesempatan lagi&quot;" newline="True"/>
+                        <call expression="loading"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="tebakan = jawaban">
+                    <then>
+                        <output expression="&quot;Jawaban mu BENAR&quot;" newline="True"/>
+                        <call expression="loading&#13;&#10;"/>
+                    </then>
+                    <else>
+                        <output expression="&quot;Ayo hitung lagi dengan tepat&quot;" newline="True"/>
+                        <output expression="&quot;No.3)  &quot; &amp; random5 &amp; &quot; + &quot; &amp; random6 &amp; &quot; = ?&quot;" newline="True"/>
+                        <input variable="tebakan"/>
+                        <assign variable="nyawa" expression="nyawaMin(nyawa)"/>
+                    </else>
+                </if>
+            </while>
+            <if expression="tebakan = jawaban || nyawa &gt; 0">
+                <then>
+                    <assign variable="skor" expression="skorplus(skor)"/>
+                    <output expression="&quot;Kamu mendapatkan tambahan skor 100 karena menjawab dengan benar&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Total skormu sekarang = &quot; &amp; skor" newline="True"/>
+                    <call expression="loading"/>
+                    <output expression="&quot;====================================================&quot;" newline="True"/>
+                    <call expression="loading"/>
+                    <call expression="pluslvl4(skor, jawaban, nyawa, tebakan, nama)"/>
+                </then>
+                <else>
+                    <call expression="menuNyawaHabis(skor, nama)"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="pluslvl4" type="None" variable="">
+        <parameters>
+            <parameter name="skor" type="Integer" array="False"/>
+            <parameter name="jawaban" type="Integer" array="False"/>
+            <parameter name="nyawa" type="Integer" array="False"/>
+            <parameter name="tebakan" type="Integer" array="False"/>
+            <parameter name="nama" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="random7, random8" type="Integer" array="False" size=""/>
+            <assign variable="random7" expression="random(401) + 100"/>
+            <assign variable="random8" expression="random(401) + 100"/>
+            <assign variable="jawaban" expression="random7 + random8"/>
+            <output expression="&quot;AREA BUKIT PENJUMLAHAN&quot; &amp; ToChar(13) &amp; &#13;&#10;&quot;========================&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;LEVEL 4  *GRIFFIN*&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;No.4)  &quot; &amp; random7 &amp; &quot; + &quot; &amp; random8 &amp; &quot; = ?&quot;" newline="True"/>
+            <input variable="tebakan"/>
+            <while expression="tebakan != jawaban &amp;&amp; nyawa &gt; 0">
+                <if expression="tebakan != jawaban">
+                    <then>
+                        <output expression="&quot;Jawabanmu salah&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Kamu masih punya &quot; &amp; nyawa &amp; &quot; kesempatan lagi&quot;" newline="True"/>
+                        <call expression="loading"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="tebakan = jawaban">
+                    <then>
+                        <output expression="&quot;Jawaban mu BENAR&quot;" newline="True"/>
+                        <call expression="loading&#13;&#10;"/>
+                    </then>
+                    <else>
+                        <output expression="&quot;Ayo hitung lagi dengan tepat&quot;" newline="True"/>
+                        <output expression="&quot;No.4)  &quot; &amp; random7 &amp; &quot; + &quot; &amp; random8 &amp; &quot; = ?&quot;" newline="True"/>
+                        <input variable="tebakan"/>
+                        <assign variable="nyawa" expression="nyawaMin(nyawa)"/>
+                    </else>
+                </if>
+            </while>
+            <if expression="tebakan = jawaban || nyawa &gt; 0">
+                <then>
+                    <assign variable="skor" expression="skorplus(skor)"/>
+                    <output expression="&quot;Kamu mendapatkan tambahan skor 100 karena menjawab dengan benar&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Total skormu sekarang = &quot; &amp; skor" newline="True"/>
+                    <call expression="loading"/>
+                    <output expression="&quot;====================================================&quot;" newline="True"/>
+                    <call expression="loading"/>
+                    <call expression="pluslvl5(skor, jawaban, nyawa, tebakan, nama)"/>
+                </then>
+                <else>
+                    <call expression="menuNyawaHabis(skor, nama)"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="pluslvl5" type="None" variable="">
+        <parameters>
+            <parameter name="skor" type="Integer" array="False"/>
+            <parameter name="jawaban" type="Integer" array="False"/>
+            <parameter name="nyawa" type="Integer" array="False"/>
+            <parameter name="tebakan" type="Integer" array="False"/>
+            <parameter name="nama" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="random9, random10" type="Integer" array="False" size=""/>
+            <assign variable="random9" expression="random(501) + 500"/>
+            <assign variable="random10" expression="random(501) + 500"/>
+            <assign variable="jawaban" expression="random9 + random10"/>
+            <output expression="&quot;AREA BUKIT PENJUMLAHAN&quot; &amp; ToChar(13) &amp; &#13;&#10;&quot;========================&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;LEVEL 5  *CYCLOPS*&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;No.5)  &quot; &amp; random9 &amp; &quot; + &quot; &amp; random10 &amp; &quot; = ?&quot;" newline="True"/>
+            <input variable="tebakan"/>
+            <while expression="tebakan != jawaban &amp;&amp; nyawa &gt; 0">
+                <if expression="tebakan != jawaban">
+                    <then>
+                        <output expression="&quot;Jawabanmu salah&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Kamu masih punya &quot; &amp; nyawa &amp; &quot; kesempatan lagi&quot;" newline="True"/>
+                        <call expression="loading"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="tebakan = jawaban">
+                    <then>
+                        <output expression="&quot;Jawaban mu BENAR&quot;" newline="True"/>
+                        <call expression="loading&#13;&#10;"/>
+                    </then>
+                    <else>
+                        <output expression="&quot;Ayo hitung lagi dengan tepat&quot;" newline="True"/>
+                        <output expression="&quot;No.5)  &quot; &amp; random9 &amp; &quot; + &quot; &amp; random10 &amp; &quot; = ?&quot;" newline="True"/>
+                        <input variable="tebakan"/>
+                        <assign variable="nyawa" expression="nyawaMin(nyawa)"/>
+                    </else>
+                </if>
+            </while>
+            <if expression="tebakan = jawaban || nyawa &gt; 0">
+                <then>
+                    <assign variable="skor" expression="skorplus(skor)"/>
+                    <output expression="&quot;Kamu mendapatkan tambahan skor 100 karena menjawab dengan benar&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Total skormu sekarang = &quot; &amp; skor" newline="True"/>
+                    <call expression="loading"/>
+                    <output expression="&quot;====================================================&quot;" newline="True"/>
+                    <call expression="loading"/>
+                    <call expression="pluslvl6(skor, jawaban, nyawa, tebakan, nama)"/>
+                </then>
+                <else>
+                    <call expression="menuNyawaHabis(skor, nama)"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="pluslvl6" type="None" variable="">
+        <parameters>
+            <parameter name="skor" type="Integer" array="False"/>
+            <parameter name="jawaban" type="Integer" array="False"/>
+            <parameter name="nyawa" type="Integer" array="False"/>
+            <parameter name="tebakan" type="Integer" array="False"/>
+            <parameter name="nama" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="random11, random12" type="Integer" array="False" size=""/>
+            <assign variable="random11" expression="random(4001) + 1000"/>
+            <assign variable="random12" expression="random(4001) + 1000"/>
+            <assign variable="jawaban" expression="random11 + random12"/>
+            <output expression="&quot;AREA BUKIT PENJUMLAHAN&quot; &amp; ToChar(13) &amp; &#13;&#10;&quot;========================&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;LEVEL 6  *MINOTAUR*&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;No.6)  &quot; &amp; random11 &amp; &quot; + &quot; &amp; random12 &amp; &quot; = ?&quot;" newline="True"/>
+            <input variable="tebakan"/>
+            <while expression="tebakan != jawaban &amp;&amp; nyawa &gt; 0">
+                <if expression="tebakan != jawaban">
+                    <then>
+                        <output expression="&quot;Jawabanmu salah&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Kamu masih punya &quot; &amp; nyawa &amp; &quot; kesempatan lagi&quot;" newline="True"/>
+                        <call expression="loading"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="tebakan = jawaban">
+                    <then>
+                        <output expression="&quot;Jawaban mu BENAR&quot;" newline="True"/>
+                        <call expression="loading&#13;&#10;"/>
+                    </then>
+                    <else>
+                        <output expression="&quot;Ayo hitung lagi dengan tepat&quot;" newline="True"/>
+                        <output expression="&quot;No.6)  &quot; &amp; random11 &amp; &quot; + &quot; &amp; random12 &amp; &quot; = ?&quot;" newline="True"/>
+                        <input variable="tebakan"/>
+                        <assign variable="nyawa" expression="nyawaMin(nyawa)"/>
+                    </else>
+                </if>
+            </while>
+            <if expression="tebakan = jawaban || nyawa &gt; 0">
+                <then>
+                    <assign variable="skor" expression="skorplus(skor)"/>
+                    <output expression="&quot;Kamu mendapatkan tambahan skor 100 karena menjawab dengan benar&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Total skormu sekarang = &quot; &amp; skor" newline="True"/>
+                    <call expression="loading"/>
+                    <output expression="&quot;====================================================&quot;" newline="True"/>
+                    <call expression="loading"/>
+                    <call expression="pluslvl7(skor, jawaban, nyawa, tebakan, nama)"/>
+                </then>
+                <else>
+                    <call expression="menuNyawaHabis(skor, nama)"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="pluslvl7" type="None" variable="">
+        <parameters>
+            <parameter name="skor" type="Integer" array="False"/>
+            <parameter name="jawaban" type="Integer" array="False"/>
+            <parameter name="nyawa" type="Integer" array="False"/>
+            <parameter name="tebakan" type="Integer" array="False"/>
+            <parameter name="nama" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="random13, random14" type="Integer" array="False" size=""/>
+            <assign variable="random13" expression="random(5001) + 5000"/>
+            <assign variable="random14" expression="random(5001) + 5000"/>
+            <assign variable="jawaban" expression="random13 + random14"/>
+            <output expression="&quot;AREA BUKIT PENJUMLAHAN&quot; &amp; ToChar(13) &amp; &#13;&#10;&quot;=======================================&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;LEVEL AKHIR &quot; &amp; &quot; *&quot; &amp; nama[1] &amp; &quot; MASTER OF ADDITION*&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;No.7)  &quot; &amp; random13 &amp; &quot; + &quot; &amp; random14 &amp; &quot; = ?&quot;" newline="True"/>
+            <input variable="tebakan"/>
+            <while expression="tebakan != jawaban &amp;&amp; nyawa &gt; 0">
+                <if expression="tebakan != jawaban">
+                    <then>
+                        <output expression="&quot;Jawabanmu salah&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Kamu masih punya &quot; &amp; nyawa &amp; &quot; kesempatan lagi&quot;" newline="True"/>
+                        <call expression="loading"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="tebakan = jawaban">
+                    <then>
+                        <output expression="&quot;Jawaban mu BENAR&quot;" newline="True"/>
+                        <call expression="loading&#13;&#10;"/>
+                    </then>
+                    <else>
+                        <output expression="&quot;Ayo hitung lagi dengan tepat&quot;" newline="True"/>
+                        <output expression="&quot;No.7)  &quot; &amp; random13 &amp; &quot; + &quot; &amp; random14 &amp; &quot; = ?&quot;" newline="True"/>
+                        <input variable="tebakan"/>
+                        <assign variable="nyawa" expression="nyawaMin(nyawa)"/>
+                    </else>
+                </if>
+            </while>
+            <if expression="tebakan = jawaban || nyawa &gt; 0">
+                <then>
+                    <assign variable="skor" expression="skorplus(skor)"/>
+                    <output expression="&quot;Kamu mendapatkan tambahan skor 100 karena menjawab dengan benar&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Total skormu sekarang = &quot; &amp; skor" newline="True"/>
+                    <call expression="loading"/>
+                    <output expression="&quot;====================================================&quot;" newline="True"/>
+                    <call expression="ending(nama)"/>
+                    <call expression="extraPlus(nama)"/>
+                </then>
+                <else>
+                    <call expression="menuNyawaHabis(skor, nama)"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="plusmain" type="None" variable="">
+        <parameters>
+            <parameter name="nama" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="pilihan" type="Integer" array="False" size=""/>
+            <output expression="&quot;Selamat datang di Area Bukit Penjumlahan&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Tantangan penjumlahan menantimu&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;Bersiaplah untuk memasuki kawasan yang penuh teka-teki matematika&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Gunakan kekuatan penjumlahanmu untuk melewati bukit yang tinggi&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;Hati-hati, bukit ini penuh teka-teki matematika yang perlu dipecahkan untuk naik ke puncak dan mengalahkan monster kematian&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;Ayo mulai petualanganmu dan kalahkan monster-monster dengan keahlian penjumlahanmu! Semoga berhasil&quot;" newline="True"/>
+            <call expression="loading"/>
+            <output expression="&quot;Siap untuk memasuki area bukit?&quot;" newline="True"/>
+            <output expression="&quot;Ketik 1 untuk lanjut&quot;" newline="True"/>
+            <input variable="pilihan"/>
+            <while expression="pilihan != 1">
+                <output expression="&quot;Ketik 1 untuk melanjutkan&quot;" newline="True"/>
+                <input variable="pilihan"/>
+            </while>
+            <call expression="pluslvl1(nama)"/>
+        </body>
+    </function>
+    <function name="skorPlus" type="Integer" variable="skor">
+        <parameters>
+            <parameter name="skor" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <assign variable="skor" expression="skor + 100"/>
+        </body>
+    </function>
+</flowgorithm>
