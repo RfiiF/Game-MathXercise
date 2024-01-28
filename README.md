@@ -1,4 +1,4 @@
-# Game MathXercise
+# Game : MathXercise
 This is my first project using Flowgorithm.
 Here I try to make a game called MathXercise.
 
